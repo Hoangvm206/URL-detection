@@ -1,6 +1,13 @@
 # AI Cyber Shield - Phishing URL Detection
 
-AI Cyber Shield is a machine learning-based phishing URL detection system designed to identify malicious URLs through security feature engineering and behavioral analysis. The project combines cybersecurity knowledge with machine learning techniques to provide real-time phishing detection.
+A machine learning-based phishing URL detection system for identifying malicious URLs in real time.
+
+## Quick Access
+
+* **Live Demo:** https://nhap-mon-ai-production.up.railway.app/#scanner
+* **GitHub Repository:** https://github.com/Hoangvm206/URL-detection
+
+---
 
 ---
 
