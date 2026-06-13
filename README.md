@@ -221,7 +221,10 @@ Classification: Phishing
 
 ## Author
 
-**Vu Minh Hoang(Team Leader)**
+**Vu Minh Hoang(Team Leader)**  
+
 **Vu Minh Tu**
-**Vu Tien Thanh**
-**Ngo Duc Thang**
+
+**Vu Tien Thanh**  
+
+**Ngo Duc Thang**  
