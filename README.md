@@ -1,66 +1,61 @@
 # AI Cyber Shield - Phishing URL Detection
 
-A machine learning-based phishing URL detection system for identifying malicious URLs in real time.
+AI Cyber Shield is a machine learning-based phishing URL detection platform that combines cybersecurity feature engineering and web technologies to identify malicious URLs in real time.
 
 ## Quick Access
 
-* **Live Demo:** https://nhap-mon-ai-production.up.railway.app/#scanner
-* **GitHub Repository:** https://github.com/Hoangvm206/URL-detection
+🌐 Live Demo: https://nhap-mon-ai-production.up.railway.app/#scanner
+
+📂 GitHub Repository: https://github.com/Hoangvm206/URL-detection
 
 ---
 
----
+## Overview
 
-## Features
+The system analyzes URL structures, domain characteristics, and website behaviors to detect phishing websites. It integrates machine learning models with a Flask-based web application, allowing users to assess URL risks through an interactive interface.
 
-* Phishing URL detection using Machine Learning
-* Security-focused feature engineering
-* URL structure analysis
-* Domain reputation analysis
-* DNS and HTTPS validation
-* Typosquatting detection
-* Sensitive keyword detection
-* Website behavior analysis
+### Key Features
+
+* Real-time phishing URL detection
+* Security-oriented feature engineering
+* URL, domain, and website behavior analysis
 * Risk score assessment
+* Web-based dashboard
+* Detection history and performance tracking
 
 ---
 
-## Architecture
+## System Architecture
 
 ```text
-URL Input
-    │
-    ▼
-Feature Extraction
-(URL + Domain + HTML Features)
-    │
-    ▼
-Data Preprocessing
-(SMOTE Balancing)
-    │
-    ▼
+User Input URL
+      │
+      ▼
+Frontend Interface
+      │
+      ▼
+Flask Backend API
+      │
+      ▼
+Feature Extraction Engine
+      │
+      ▼
 Machine Learning Models
-├── Naive Bayes
-└── Random Forest
-    │
-    ▼
+(Naive Bayes / Random Forest)
+      │
+      ▼
 Risk Assessment
-    │
-    ▼
+      │
+      ▼
 Detection Result
-(SAFE / MEDIUM RISK / HIGH RISK)
 ```
 
 ---
 
 ## Dataset
 
-The training dataset was built from multiple phishing URL sources and processed into a balanced training set.
-
-### Dataset Statistics
-
 * Total URLs: 41,536
-* Binary Classification:
+* Classification Type: Binary Classification
 
   * Legitimate URLs
   * Phishing URLs
@@ -68,59 +63,14 @@ The training dataset was built from multiple phishing URL sources and processed 
 
 ---
 
-## Security Features
-
-The system extracts security-relevant indicators from each URL.
-
-### URL Features
-
-* URL Length
-* URL Entropy
-* Number of Subdomains
-* IP Address Usage
-* URL Shortening Services
-* Sensitive Keyword Count
-
-### Domain Features
-
-* HTTPS Status
-* Domain Age
-* DNS Records
-* Google Index Status
-* Web Traffic Reputation
-* Typosquatting Score
-
-### Website Behavior Features
-
-* External Links
-* Form Handling
-* Redirect Analysis
-* Iframe Detection
-* JavaScript Behavior
-* Popup Detection
-
----
-
 ## Machine Learning Models
-
-### Naive Bayes
-
-A lightweight probabilistic classifier used as a baseline model.
-
-### Random Forest
-
-An ensemble learning model consisting of 100 decision trees used for final phishing classification.
-
----
-
-## Results
 
 | Model         | Accuracy | Precision | Recall | F1-Score |
 | ------------- | -------- | --------- | ------ | -------- |
 | Naive Bayes   | 84.76%   | 93.32%    | 87.24% | 90.17%   |
 | Random Forest | 93.27%   | 97.55%    | 93.96% | 95.72%   |
 
-Random Forest achieved the best overall performance and was selected as the primary detection model.
+Random Forest achieved the best performance and was selected as the primary detection model.
 
 ---
 
@@ -129,17 +79,15 @@ Random Forest achieved the best overall performance and was selected as the prim
 ```text
 AI-Cyber-Shield/
 │
-├── src/
-│   ├── feature_extractor.py
-│   ├── train.py
-│   └── malicious_url_detector.py
+├── data/               # Training datasets
+├── frontend/           # Frontend assets
+├── models/             # Trained ML models
+├── results/            # Evaluation results
+├── routes/             # API endpoints
+├── src/                # Training and feature extraction
 │
-├── models/
-│   ├── naive_bayes_model.pkl
-│   └── random_forest_model.pkl
-│
-├── screenshots/
-│
+├── app.py              # Flask application
+├── config.py           # Application configuration
 ├── requirements.txt
 └── README.md
 ```
@@ -148,83 +96,70 @@ AI-Cyber-Shield/
 
 ## Installation
 
-### Clone Repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/Hoangvm206/URL-detection.git
 cd URL-detection
 ```
 
-### Install Dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Model Training
-
-Train the machine learning models:
+Run the application:
 
 ```bash
-python train.py
+python app.py
 ```
 
-Generated models:
+The application will be available at:
 
 ```text
-naive_bayes_model.pkl
-random_forest_model.pkl
-```
-
----
-
-## URL Analysis
-
-Analyze a URL using the trained model:
-
-```bash
-python malicious_url_detector.py
-```
-
-Example:
-
-```text
-Enter a URL:
-https://example-login-security.com
-```
-
-Output:
-
-```text
-Risk Score: 92.3%
-Classification: Phishing
+http://localhost:5000
 ```
 
 ---
 
 ## Technologies Used
 
-* Python
+### Cybersecurity
+
+* Phishing Detection
+* URL Analysis
+* Domain Reputation Analysis
+* DNS Validation
+* Security Feature Engineering
+
+### Machine Learning
+
 * Scikit-learn
-* Pandas
-* NumPy
-* BeautifulSoup
-* Requests
-* WHOIS
-* SMOTE
 * Random Forest
 * Naive Bayes
+* SMOTE
+
+### Software Development
+
+* Python
+* Flask
+* HTML/CSS/JavaScript
+* Railway Deployment
 
 ---
 
-## Author
+## Team
 
-**Vu Minh Hoang(Team Leader)**  
+| Member        | Role                                             |
+| ------------- | ------------------------------------------------ |
+| Vu Minh Hoang | Team Leader |
+| Vu Minh Tu    | Team Member                                      |
+| Vu Tien Thanh | Team Member                                      |
+| Ngo Duc Thang | Team Member                                      |
 
-**Vu Minh Tu**
+---
 
-**Vu Tien Thanh**  
+## License
 
-**Ngo Duc Thang**  
+This project was developed for educational and research purposes.
